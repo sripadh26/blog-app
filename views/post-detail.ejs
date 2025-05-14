@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1><%= post.title %></h1>
+    </header>
+
+    <main>
+        <p><%= post.content %></p>
+
+        <a href="/posts" class="back-link">← Back to All Posts</a> |
+        <a href="/posts/<%= post.id %>/edit">✏️ Edit</a>
+
+        <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" style="display:inline;" onsubmit="return confirm('Delete this post?');">
+            <button type="submit">🗑️ Delete</button>
+        </form>
+    </main>
+</body>
+</html>
